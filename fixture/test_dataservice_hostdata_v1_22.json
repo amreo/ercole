@@ -1,0 +1,141 @@
+{
+	"agentVersion": "latest",
+	"clusterMembershipStatus": {
+		"hacmp": false,
+		"oracleClusterware": false,
+		"sunCluster": false,
+		"veritasClusterServer": false
+	},
+	"clusters": null,
+	"environment": "TST",
+	"features": {
+		"unknown": {
+			"unknownFeatures": [
+				{
+					"name": "pippod",
+					"status": true
+				}
+			]
+		}
+	},
+	"filesystems": [
+		{
+			"availableSpace": 21767828,
+			"filesystem": "/dev/sdb1",
+			"mountedOn": "/",
+			"size": 82436784,
+			"type": "ext4",
+			"usedSpace": 56458372
+		},
+		{
+			"availableSpace": 1843692,
+			"filesystem": "/dev/sdb2",
+			"mountedOn": "/boot",
+			"size": 2064208,
+			"type": "ext2",
+			"usedSpace": 115660
+		},
+		{
+			"availableSpace": 522980,
+			"filesystem": "/dev/sdb3",
+			"mountedOn": "/boot/efi",
+			"size": 523248,
+			"type": "vfat",
+			"usedSpace": 268
+		},
+		{
+			"availableSpace": 8131264,
+			"filesystem": "dev",
+			"mountedOn": "/dev",
+			"size": 8131264,
+			"type": "devtmpfs",
+			"usedSpace": 0
+		},
+		{
+			"availableSpace": 8004564,
+			"filesystem": "tmpfs",
+			"mountedOn": "/dev/shm",
+			"size": 8140852,
+			"type": "tmpfs",
+			"usedSpace": 136288
+		},
+		{
+			"availableSpace": 77887316,
+			"filesystem": "/dev/sda3",
+			"mountedOn": "/home",
+			"size": 918985520,
+			"type": "ext4",
+			"usedSpace": 794393324
+		},
+		{
+			"availableSpace": 8138748,
+			"filesystem": "run",
+			"mountedOn": "/run",
+			"size": 8140852,
+			"type": "tmpfs",
+			"usedSpace": 2104
+		},
+		{
+			"availableSpace": 1628016,
+			"filesystem": "tmpfs",
+			"mountedOn": "/run/user/1000",
+			"size": 1628168,
+			"type": "tmpfs",
+			"usedSpace": 152
+		},
+		{
+			"availableSpace": 1628092,
+			"filesystem": "tmpfs",
+			"mountedOn": "/run/user/120",
+			"size": 1628168,
+			"type": "tmpfs",
+			"usedSpace": 76
+		},
+		{
+			"availableSpace": 4096,
+			"filesystem": "tmpfs",
+			"mountedOn": "/sys/fs/cgroup",
+			"size": 4096,
+			"type": "tmpfs",
+			"usedSpace": 0
+		},
+		{
+			"availableSpace": 8099552,
+			"filesystem": "tmpfs",
+			"mountedOn": "/tmp",
+			"size": 8140852,
+			"type": "tmpfs",
+			"usedSpace": 41300
+		},
+		{
+			"availableSpace": 8616296,
+			"filesystem": "/dev/sda2",
+			"mountedOn": "/var",
+			"size": 41153856,
+			"type": "ext4",
+			"usedSpace": 30424024
+		}
+	],
+	"hostname": "amreo-archlinux-pc",
+	"info": {
+		"coresPerSocket": 4,
+		"cpuCores": 4,
+		"cpuFrequency": "2.80GHz",
+		"cpuModel": "Intel(R) Core(TM) i7-7700HQ CPU",
+		"cpuSockets": 1,
+		"cpuThreads": 8,
+		"hardwareAbstraction": "PH",
+		"hardwareAbstractionTechnology": "PH",
+		"hostname": "amreo-archlinux-pc",
+		"kernel": "Linux",
+		"kernelVersion": "5.4.68-1-lts",
+		"memoryTotal": 15,
+		"os": "Arch Linux",
+		"osVersion": "rolling",
+		"swapTotal": 0,
+		"threadsPerCore": 2
+	},
+	"location": "Germany",
+	"schemaVersion": 1,
+	"tags": []
+}
