@@ -170,7 +170,7 @@ var HostBsonValidatorRules = bson.M{
 		},
 		"swapTotal": bson.M{
 			"bsonType": "double",
-			"minimum":  1,
+			"minimum":  0,
 		},
 	},
 }
