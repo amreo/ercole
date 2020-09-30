@@ -22,60 +22,45 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// Features holds various informations about the features of the host.
-type Features struct {
-	Oracle    *OracleFeature         `json:"oracle,omitempty" bson:"oracle,omitempty"`
-	Microsoft *MicrosoftFeature      `json:"microsoft,omitempty" bson:"microsoft,omitempty"`
-	Unknown   *UnknownFeature        `json:"unknown,omitempty" bson:"unknown,omitempty"`
-	OtherInfo map[string]interface{} `json:"-" bson:"-"`
+type UnknownFeature struct {
+	UnknownFeatures []map[string]interface{} `json:"unknownFeatures,omitempty" bson:"unknownFeatures,omitempty"`
+	OtherInfo       map[string]interface{}   `json:"-" bson:"-"`
 }
 
 // MarshalJSON return the JSON rappresentation of this
-func (v Features) MarshalJSON() ([]byte, error) {
+func (v UnknownFeature) MarshalJSON() ([]byte, error) {
 	return godynstruct.DynMarshalJSON(reflect.ValueOf(v), v.OtherInfo, "OtherInfo")
 }
 
 // UnmarshalJSON parse the JSON content in data and set the fields in v appropriately
-func (v *Features) UnmarshalJSON(data []byte) error {
+func (v *UnknownFeature) UnmarshalJSON(data []byte) error {
 	return godynstruct.DynUnmarshalJSON(data, reflect.ValueOf(v), &v.OtherInfo, "OtherInfo")
 }
 
 // MarshalBSON return the BSON rappresentation of this
-func (v Features) MarshalBSON() ([]byte, error) {
+func (v UnknownFeature) MarshalBSON() ([]byte, error) {
 	return godynstruct.DynMarshalBSON(reflect.ValueOf(v), v.OtherInfo, "OtherInfo")
 }
 
 // UnmarshalBSON parse the BSON content in data and set the fields in v appropriately
-func (v *Features) UnmarshalBSON(data []byte) error {
+func (v *UnknownFeature) UnmarshalBSON(data []byte) error {
 	return godynstruct.DynUnmarshalBSON(data, reflect.ValueOf(v), &v.OtherInfo, "OtherInfo")
 }
 
-// FeaturesBsonValidatorRules contains mongodb validation rules for Features
-var FeaturesBsonValidatorRules = bson.M{
+// UnknownFeatureBsonValidatorRules contains mongodb validation rules for UnknownFeature
+var UnknownFeatureBsonValidatorRules = bson.M{
 	"bsonType": "object",
 	"properties": bson.M{
-		"oracle": bson.M{
+		"unknownFeatures": bson.M{
 			"anyOf": bson.A{
+				bson.M{"bsonType": "null"},
 				bson.M{
-					"bsonType": "null",
+					"bsonType": "array",
+					"items": bson.M{
+						"bsonType":             "object",
+						"additionalProperties": true,
+					},
 				},
-				OracleFeatureBsonValidatorRules,
-			},
-		},
-		"microsoft": bson.M{
-			"anyOf": bson.A{
-				bson.M{
-					"bsonType": "null",
-				},
-				MicrosoftFeatureBsonValidatorRules,
-			},
-		},
-		"unknown": bson.M{
-			"anyOf": bson.A{
-				bson.M{
-					"bsonType": "null",
-				},
-				UnknownFeatureBsonValidatorRules,
 			},
 		},
 	},
