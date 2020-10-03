@@ -10,7 +10,7 @@
 	"environment": "TST",
 	"features": {
 		"unknown": {
-			"unknownFeatures": [
+			"customData": [
 				{
 					"name": "pippod",
 					"status": true

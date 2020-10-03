@@ -23,8 +23,8 @@ import (
 )
 
 type UnknownFeature struct {
-	UnknownFeatures []map[string]interface{} `json:"unknownFeatures,omitempty" bson:"unknownFeatures,omitempty"`
-	OtherInfo       map[string]interface{}   `json:"-" bson:"-"`
+	CustomData []map[string]interface{} `json:"customData,omitempty" bson:"customData,omitempty"`
+	OtherInfo  map[string]interface{}   `json:"-" bson:"-"`
 }
 
 // MarshalJSON return the JSON rappresentation of this
@@ -51,7 +51,7 @@ func (v *UnknownFeature) UnmarshalBSON(data []byte) error {
 var UnknownFeatureBsonValidatorRules = bson.M{
 	"bsonType": "object",
 	"properties": bson.M{
-		"unknownFeatures": bson.M{
+		"customData": bson.M{
 			"anyOf": bson.A{
 				bson.M{"bsonType": "null"},
 				bson.M{
